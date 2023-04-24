@@ -246,6 +246,24 @@ impl KinematicCharacterController {
                     translation_remaining,
                     toi,
                 });
+                
+                // Try to go up stairs.
+                if !self.handle_stairs(
+                    bodies,
+                    colliders,
+                    queries,
+                    character_shape,
+                    &(Translation::from(result.translation) * character_pos),
+                    &dims,
+                    filter,
+                    handle,
+                    &mut translation_remaining,
+                    &mut result,
+                ) {
+                    // No stairs, try to move along slopes.
+                    translation_remaining =
+                        self.handle_slopes(&toi, &translation_remaining, &mut result);
+                }
             } else {
                 // No interference along the path.
                 result.translation += translation_remaining;
