@@ -270,7 +270,7 @@ impl KinematicCharacterController {
                 translation_remaining.fill(0.0);
                 break;
             }
-/*
+
             result.grounded = self.detect_grounded_status_and_apply_friction(
                 dt,
                 bodies,
@@ -286,10 +286,10 @@ impl KinematicCharacterController {
 
             if !self.slide {
                 break;
-            }*/
+            }
         }
         // If needed, and if we are not already grounded, snap to the ground.
-      /*  if grounded_at_starting_pos {
+        if grounded_at_starting_pos {
             self.snap_to_ground(
                 bodies,
                 colliders,
@@ -300,7 +300,7 @@ impl KinematicCharacterController {
                 filter,
                 &mut result,
             );
-        }*/
+        }
 
         // Return the result.
         result
