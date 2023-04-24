@@ -261,8 +261,8 @@ impl KinematicCharacterController {
                     &mut result,
                 ) {
                     // No stairs, try to move along slopes.
-                  //  translation_remaining =
-                  //      self.handle_slopes(&toi, &translation_remaining, &mut result);
+                    translation_remaining =
+                        self.handle_slopes(&toi, &translation_remaining, &mut result);
                 }
             } else {
                 // No interference along the path.
@@ -270,7 +270,7 @@ impl KinematicCharacterController {
                 translation_remaining.fill(0.0);
                 break;
             }
-
+/*
             result.grounded = self.detect_grounded_status_and_apply_friction(
                 dt,
                 bodies,
@@ -286,10 +286,10 @@ impl KinematicCharacterController {
 
             if !self.slide {
                 break;
-            }
+            }*/
         }
         // If needed, and if we are not already grounded, snap to the ground.
-        if grounded_at_starting_pos {
+      /*  if grounded_at_starting_pos {
             self.snap_to_ground(
                 bodies,
                 colliders,
@@ -300,7 +300,7 @@ impl KinematicCharacterController {
                 filter,
                 &mut result,
             );
-        }
+        }*/
 
         // Return the result.
         result
