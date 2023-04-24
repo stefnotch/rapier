@@ -209,7 +209,7 @@ impl KinematicCharacterController {
         );
 
         let mut max_iters = 20;
-        let mut kinematic_friction_translation = Vector::zeros();
+       // let mut kinematic_friction_translation = Vector::zeros();
         let offset = self.offset.eval(dims.y);
 
         while let Some((translation_dir, translation_dist)) =
