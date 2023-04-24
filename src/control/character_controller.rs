@@ -261,8 +261,8 @@ impl KinematicCharacterController {
                     &mut result,
                 ) {
                     // No stairs, try to move along slopes.
-                    translation_remaining =
-                        self.handle_slopes(&toi, &translation_remaining, &mut result);
+                  //  translation_remaining =
+                  //      self.handle_slopes(&toi, &translation_remaining, &mut result);
                 }
             } else {
                 // No interference along the path.
